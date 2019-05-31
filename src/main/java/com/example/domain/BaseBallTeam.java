@@ -1,8 +1,5 @@
 package com.example.domain;
 
-import java.time.LocalDate;
-import java.util.List;
-
 /**
  * 野球チーム情報を表す.
  * 
