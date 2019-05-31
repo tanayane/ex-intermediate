@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>課題2</title>
+</head>
+<body>
+	<h1>ホテル検索</h1>
+	<form action="hotersearch.html" th:action="@{/ex-2/search}" th:object="${hoterSearchForm}">
+		<div>
+			<input type="text" id="priceform" name="maxprice" th:field="*{maxprice}">
+			<label for="priceform">円以下</label>
+		</div>
+		<div>
+			<input type="submit" value="検索">
+		</div>
+	</form>
+</body>
+</html>
