@@ -19,12 +19,12 @@ import com.example.domain.BaseBallTeam;
  */
 @Repository
 public class BaseBallTeamRepository {
-	
+
 	/**
 	 * DBから受け取ったデータの格納.
 	 */
-	private final static RowMapper<BaseBallTeam> BASEBALLTEAM_ROW_MAPPER=(rs,i)->{
-		BaseBallTeam team=new BaseBallTeam();
+	private final static RowMapper<BaseBallTeam> BASEBALLTEAM_ROW_MAPPER = (rs, i) -> {
+		BaseBallTeam team = new BaseBallTeam();
 		team.setId(rs.getInt("id"));
 		team.setLeagueName(rs.getString("league_name"));
 		team.setTeamName(rs.getString("team_name"));
@@ -34,21 +34,20 @@ public class BaseBallTeamRepository {
 		return team;
 	};
 
-	
 	@Autowired
 	NamedParameterJdbcTemplate template;
-	
+
 	/**
 	 * 野球チーム全件検索.
 	 * 
 	 * @return 野球チームのリスト
 	 */
-	public List<BaseBallTeam> findAll(){
-		String sql="select id,league_name,team_name,headquarters,inauguration,history from teams order by inauguration";
-		List<BaseBallTeam> teamList=template.query(sql, BASEBALLTEAM_ROW_MAPPER);
+	public List<BaseBallTeam> findAll() {
+		String sql = "select id,league_name,team_name,headquarters,inauguration,history from teams order by inauguration";
+		List<BaseBallTeam> teamList = template.query(sql, BASEBALLTEAM_ROW_MAPPER);
 		return teamList;
 	}
-	
+
 	/**
 	 * idで野球チーム情報を検索.
 	 * 
@@ -56,9 +55,9 @@ public class BaseBallTeamRepository {
 	 * @return 検索した野球チーム情報
 	 */
 	public BaseBallTeam load(Integer id) {
-		String sql="select id,league_name,team_name,headquarters,inauguration,history from teams where id=:id";
-		SqlParameterSource param=new MapSqlParameterSource().addValue("id", id);
-		BaseBallTeam team=template.queryForObject(sql, param, BASEBALLTEAM_ROW_MAPPER);
+		String sql = "select id,league_name,team_name,headquarters,inauguration,history from teams where id=:id";
+		SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
+		BaseBallTeam team = template.queryForObject(sql, param, BASEBALLTEAM_ROW_MAPPER);
 		return team;
 	}
 }

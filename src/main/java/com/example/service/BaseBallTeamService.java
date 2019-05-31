@@ -21,16 +21,16 @@ public class BaseBallTeamService {
 
 	@Autowired
 	private BaseBallTeamRepository repository;
-	
+
 	/**
 	 * 野球チームを全件検索する.
 	 * 
 	 * @return 野球チームのリスト
 	 */
-	public List<BaseBallTeam> showList(){
+	public List<BaseBallTeam> showList() {
 		return repository.findAll();
 	}
-	
+
 	/**
 	 * 指定されたidの野球チームデータを検索.
 	 * 
