@@ -1,6 +1,5 @@
 package com.example.repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +8,6 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.example.domain.BaseBallTeam;
 
@@ -22,7 +18,6 @@ import com.example.domain.BaseBallTeam;
  *
  */
 @Repository
-@Transactional
 public class BaseBallTeamRepository {
 	
 	/**
@@ -31,8 +26,8 @@ public class BaseBallTeamRepository {
 	private final static RowMapper<BaseBallTeam> BASEBALLTEAM_ROW_MAPPER=(rs,i)->{
 		BaseBallTeam team=new BaseBallTeam();
 		team.setId(rs.getInt("id"));
-		team.setLeagueName(rs.getString("team_name"));
-		team.setTeamName(rs.getString("league_name"));
+		team.setLeagueName(rs.getString("league_name"));
+		team.setTeamName(rs.getString("team_name"));
 		team.setHeadquarters(rs.getString("headquarters"));
 		team.setInauguration(rs.getString("inauguration"));
 		team.setHistory(rs.getString("history"));
