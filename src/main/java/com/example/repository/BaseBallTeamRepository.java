@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 @Transactional
 public class BaseBallTeamRepository {
+	private String answer;
 	
 	@Autowired
 	NamedParameterJdbcTemplate template;

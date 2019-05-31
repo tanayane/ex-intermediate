@@ -10,43 +10,61 @@ import java.util.List;
  *
  */
 public class BaseBallTeam {
+	/**	 id 主キー */
+	private Integer id;
+	/**	 リーグ名*/
+	private String leagueName;
 	/**	 球団名 */
-	private String name;
+	private String teamName;
 	/**	 本拠地 */
-	private String address;
+	private String headquarters;
 	/**	 発足 */
-	private LocalDate date;
+	private String inauguration;
 	/**	 歴史 */
-	private List<String> history;
+	private String history;
+	
 	
 	@Override
 	public String toString() {
-		return "BaseBallTeam [name=" + name + ", address=" + address + ", date=" + date + ", history=" + history + "]";
+		return "BaseBallTeam [id=" + id + ", leagueName=" + leagueName + ", teamName=" + teamName + ", headquarters="
+				+ headquarters + ", inauguration=" + inauguration + ", history=" + history + "]";
 	}
 	
 	//get&set
-	public String getName() {
-		return name;
+	public Integer getId() {
+		return id;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public String getAddress() {
-		return address;
+	public String getLeagueName() {
+		return leagueName;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setLeagueName(String leagueName) {
+		this.leagueName = leagueName;
 	}
-	public LocalDate getDate() {
-		return date;
+	public String getTeamName() {
+		return teamName;
 	}
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
 	}
-	public List<String> getHistory() {
+	public String getHeadquarters() {
+		return headquarters;
+	}
+	public void setHeadquarters(String headquarters) {
+		this.headquarters = headquarters;
+	}
+	public String getInauguration() {
+		return inauguration;
+	}
+	public void setInauguration(String inauguration) {
+		this.inauguration = inauguration;
+	}
+	public String getHistory() {
 		return history;
 	}
-	public void setHistory(List<String> history) {
+	public void setHistory(String history) {
 		this.history = history;
 	}
 	
