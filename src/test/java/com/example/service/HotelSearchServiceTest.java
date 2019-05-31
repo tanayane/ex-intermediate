@@ -28,6 +28,10 @@ public class HotelSearchServiceTest {
 	private HotelSearchService service;
 	
 	
+	/**
+	 * 全件検索をテストする.
+	 * 
+	 */
 	@Test
 	public void testSearchAll() {
 		List<Hotel> hotelList=service.searchByLessThanPrice(Integer.MAX_VALUE);
@@ -38,12 +42,19 @@ public class HotelSearchServiceTest {
 		//fail("Not yet implemented");
 	}
 	
+	/**
+	 * 入力値が0の場合をテストする.
+	 */
 	@Test
 	public void testSearch0() {
 		List<Hotel> hotelList=service.searchByLessThanPrice(0);
 		assertThat("TC4:結果数が一致しません",hotelList.size(),is(0));
 		//fail("Not yet implemented");
 	}
+	
+	/**
+	 * 入力値が9999の場合をテストする.
+	 */
 	@Test
 	public void testSearch9999() {
 		List<Hotel> hotelList=service.searchByLessThanPrice(9999);
@@ -59,6 +70,11 @@ public class HotelSearchServiceTest {
 		
 		//fail("Not yet implemented");
 	}
+	
+	
+	/**
+	 * 入力値が10000の場合をテストする.
+	 */
 	@Test
 	public void testSearch10000() {
 		List<Hotel> hotelList=service.searchByLessThanPrice(10000);
