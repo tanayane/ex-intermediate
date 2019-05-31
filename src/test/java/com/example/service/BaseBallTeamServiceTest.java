@@ -57,8 +57,7 @@ public class BaseBallTeamServiceTest {
 		assertThat("TC4:球団名が正しくありません", team.getTeamName(), is("読売ジャイアンツ"));
 		assertThat("TC5:本拠地が正しくありません", team.getHeadquarters(), is("東京ドーム（東京都・文京区）"));
 		assertThat("TC6:発足が正しくありません", team.getInauguration(), is("1934年12月26日"));
-		// assertThat("TC7:歴史が正しくありません",team.getHistory(),is("大日本東京野球倶楽部（1934年)
-		// \n↓\n東京巨人軍（1935年〜1946年） \n↓\n読売ジャイアンツ（1947年〜）"));
+		// assertThat("TC7:歴史が正しくありません",team.getHistory(),is("大日本東京野球倶楽部（1934年) \n↓\n東京巨人軍（1935年〜1946年） \n↓\n読売ジャイアンツ（1947年〜）"));
 
 		// fail("Not yet implemented");
 		System.out.println("野球チームをidで検索するテスト終了");
