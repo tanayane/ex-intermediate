@@ -41,7 +41,7 @@ public class BaseBallTeamRepository {
 	/**
 	 * 野球チーム全件検索.
 	 * 
-	 * @return
+	 * @return 野球チームのリスト
 	 */
 	public List<BaseBallTeam> findAll(){
 		String sql="select id,league_name,team_name,headquarters,inauguration,history from teams order by inauguration";
