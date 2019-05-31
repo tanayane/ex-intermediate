@@ -25,7 +25,9 @@ public class BaseBallTeamController {
 	}
 
 	@RequestMapping("/showDetail")
-	public String showDetail(Integer id) {
+	public String showDetail(Integer id,Model model) {
+		BaseBallTeam team=service.showDetail(id);
+		model.addAttribute("team",team);
 		return "teamdetail";
 	}
 	
